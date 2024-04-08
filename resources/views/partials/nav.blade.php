@@ -45,6 +45,7 @@
                     <details>
                         <summary>{{auth()->user()->name}}</summary>
                         <ul class="p-2">
+                            <li><a href="{{ route('profile.edit') }}">Edit profile</a></li>
                             <li>
                                 <form action="{{route('logout')}}" method="POST">
                                     @csrf
