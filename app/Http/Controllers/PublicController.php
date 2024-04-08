@@ -53,7 +53,8 @@ class PublicController extends Controller
     }
 
     public function user(User $user){
-        return view('user', compact('user'));
+        $posts = $user->posts()->latest()->paginate(10);
+        return view('user', compact('user', "posts"));
     }
 
     public function follow(User $user){
